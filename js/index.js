@@ -27,8 +27,8 @@ function nextSlide() {
 }
 function prevSlide() {
    currentImageIndex--;
-   if (currentImageIndex == imgList.length-1) {
-      currentImageIndex = 0
+   if (currentImageIndex <0) {
+      currentImageIndex = imgList.length-1;
    }
    
    var imgSrc = imgList[currentImageIndex].getAttribute('src')
