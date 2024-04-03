@@ -26,6 +26,17 @@ function Slide(step) {
    var imgSrc = imgList[currentImageIndex].getAttribute('src')
    lightboxItem.style.backgroundImage = `url(${imgSrc})`
 }
+document.addEventListener('keydown' , function (e) {
+   if (e.key == 'ArrowRight') {
+      Slide(1)
+   }
+   else if(e.key == 'ArrowLeft'){
+      Slide(-1)
+   }
+   else if(e.key == 'Escape'){
+      Close()
+   }
+})
 function Close() {
    lightboxContainer.classList.replace('d-flex' , 'd-none')
 }
