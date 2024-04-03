@@ -17,6 +17,9 @@ for (let i = 0; i < imgList.length; i++) {
 }
 
 function nextSlide() {
+   if (currentImageIndex == imgList.length-1) {
+      currentImageIndex = 0
+   }
    currentImageIndex++;
    var imgSrc = imgList[currentImageIndex].getAttribute('src')
    lightboxItem.style.backgroundImage = `url(${imgSrc})`
