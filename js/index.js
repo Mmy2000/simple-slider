@@ -7,6 +7,9 @@ var closeBtn = document.getElementById('close')
 var currentImageIndex;
 
 lightboxContainer.addEventListener('click' , Close)
+lightboxItem.addEventListener('click' , function(e){
+   e.stopPropagation()
+})
 for (let i = 0; i < imgList.length; i++) {
    imgList[i].addEventListener('click' , function (e) {
     lightboxContainer.classList.replace('d-none' , 'd-flex')
