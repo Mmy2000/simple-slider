@@ -26,6 +26,9 @@ function Slide(step) {
    var imgSrc = imgList[currentImageIndex].getAttribute('src')
    lightboxItem.style.backgroundImage = `url(${imgSrc})`
 }
+function Close() {
+   lightboxContainer.classList.replace('d-flex' , 'd-none')
+}
 // function nextSlide() {
 //    currentImageIndex++;
 //    if (currentImageIndex == imgList.length) {
@@ -46,3 +49,4 @@ function Slide(step) {
 // }
 nextBtn.addEventListener('click' , function(){Slide(1)})
 prevBtn.addEventListener('click' , function(){Slide(-1)})
+closeBtn.addEventListener('click' , Close)
