@@ -15,24 +15,34 @@ for (let i = 0; i < imgList.length; i++) {
     lightboxItem.style.backgroundImage = `url(${imgSrc})`
    })
 }
-
-function nextSlide() {
-   currentImageIndex++;
+function Slide(step) {
+   currentImageIndex = currentImageIndex + step
    if (currentImageIndex == imgList.length) {
       currentImageIndex = 0
    }
-   
-   var imgSrc = imgList[currentImageIndex].getAttribute('src')
-   lightboxItem.style.backgroundImage = `url(${imgSrc})`
-}
-function prevSlide() {
-   currentImageIndex--;
    if (currentImageIndex <0) {
       currentImageIndex = imgList.length-1;
    }
-   
    var imgSrc = imgList[currentImageIndex].getAttribute('src')
    lightboxItem.style.backgroundImage = `url(${imgSrc})`
 }
-nextBtn.addEventListener('click' , nextSlide)
-prevBtn.addEventListener('click' , prevSlide)
+// function nextSlide() {
+//    currentImageIndex++;
+//    if (currentImageIndex == imgList.length) {
+//       currentImageIndex = 0
+//    }
+   
+//    var imgSrc = imgList[currentImageIndex].getAttribute('src')
+//    lightboxItem.style.backgroundImage = `url(${imgSrc})`
+// }
+// function prevSlide() {
+//    currentImageIndex--;
+//    if (currentImageIndex <0) {
+//       currentImageIndex = imgList.length-1;
+//    }
+   
+//    var imgSrc = imgList[currentImageIndex].getAttribute('src')
+//    lightboxItem.style.backgroundImage = `url(${imgSrc})`
+// }
+nextBtn.addEventListener('click' , function(){Slide(1)})
+prevBtn.addEventListener('click' , function(){Slide(-1)})
