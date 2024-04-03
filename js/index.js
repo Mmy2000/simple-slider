@@ -17,11 +17,22 @@ for (let i = 0; i < imgList.length; i++) {
 }
 
 function nextSlide() {
+   currentImageIndex++;
+   if (currentImageIndex == imgList.length) {
+      currentImageIndex = 0
+   }
+   
+   var imgSrc = imgList[currentImageIndex].getAttribute('src')
+   lightboxItem.style.backgroundImage = `url(${imgSrc})`
+}
+function prevSlide() {
+   currentImageIndex--;
    if (currentImageIndex == imgList.length-1) {
       currentImageIndex = 0
    }
-   currentImageIndex++;
+   
    var imgSrc = imgList[currentImageIndex].getAttribute('src')
    lightboxItem.style.backgroundImage = `url(${imgSrc})`
 }
 nextBtn.addEventListener('click' , nextSlide)
+prevBtn.addEventListener('click' , prevSlide)
